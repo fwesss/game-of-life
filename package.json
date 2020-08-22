@@ -16,7 +16,8 @@
     "test:e2e:dev": "start-server-and-test dev http://localhost:3000 cy:open",
     "pretest:e2e:run": "yarn run build",
     "test:e2e:run": "start-server-and-test start http://localhost:3000 cy:run",
-    "type-check": "tsc --pretty --noEmit"
+    "type-check": "tsc --pretty --noEmit",
+    "update-snaps": "yarn test -u"
   },
   "husky": {
     "hooks": {
@@ -35,15 +36,25 @@
     ]
   },
   "dependencies": {
+    "@chakra-ui/core": "^1.0.0-rc.2",
+    "@chakra-ui/theme": "^1.0.0-rc.2",
+    "@xstate/react": "^0.8.1",
+    "fontfaceobserver": "^2.1.0",
     "next": "latest",
     "react": "^16.13.1",
-    "react-dom": "^16.13.1"
+    "react-dom": "^16.13.1",
+    "react-three-fiber": "^4.2.20",
+    "three": "^0.119.1",
+    "xstate": "^4.12.0"
   },
   "devDependencies": {
+    "@testing-library/cypress": "^6.0.1",
     "@testing-library/react": "^10.0.1",
+    "@types/fontfaceobserver": "^0.0.6",
     "@types/jest": "^25.1.4",
     "@types/node": "^13.9.5",
     "@types/react": "^16.9.27",
+    "@types/testing-library__cypress": "^5.0.6",
     "@types/testing-library__react": "^10.0.0",
     "@typescript-eslint/eslint-plugin": "^2.25.0",
     "@typescript-eslint/parser": "^2.25.0",

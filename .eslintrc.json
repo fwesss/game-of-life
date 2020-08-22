@@ -11,7 +11,7 @@
     "react-hooks",
     "jsx-a11y",
     "json-format",
-    "fp",
+    //    "fp",
     "jest",
     "jest-formatting",
     "testing-library",
@@ -25,7 +25,7 @@
     "plugin:jsx-a11y/recommended",
     "airbnb",
     "airbnb/hooks",
-    "plugin:fp/recommended",
+    //    "plugin:fp/recommended",
     "plugin:@typescript-eslint/eslint-recommended",
     "plugin:@typescript-eslint/recommended-requiring-type-checking",
     "plugin:import/errors",
@@ -53,7 +53,8 @@
     "node": true
   },
   "rules": {
-    "fp/no-mutation": [2, { "commonjs": true }],
+    //    "fp/no-mutation": [2, { "commonjs": true }],
+    "react/jsx-props-no-spreading": 0,
     "react/react-in-jsx-scope": 0,
     "react/jsx-filename-extension": 0,
     "react/display-name": 0,
