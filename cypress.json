@@ -1,3 +1,5 @@
 {
-  "projectId": "xts52j"
+  "projectId": "xts52j",
+  "baseUrl": "http://localhost:3000",
+  "integrationFolder": "cypress/e2e"
 }
