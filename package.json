@@ -1,28 +1,37 @@
 {
   "name": "with-typescript-eslint-jest",
-  "author": "@erikdstock",
-  "license": "MIT",
   "version": "1.0.0",
+  "license": "MIT",
+  "author": "@erikdstock",
   "scripts": {
-    "dev": "next dev",
     "build": "next build",
+    "cy:open": "cypress open",
+    "cy:run": "cypress run",
+    "dev": "next dev",
+    "format": "prettier --write \"**/*.{js,ts,tsx,json}\"",
+    "lint": "eslint . --ext ts --ext tsx --ext js --ext json",
     "start": "next start",
-    "type-check": "tsc --pretty --noEmit",
-    "format": "prettier --write \"**/*.{js,ts,tsx}\"",
-    "lint": "eslint . --ext ts --ext tsx --ext js",
     "test": "jest",
-    "test-all": "yarn lint && yarn type-check && yarn test"
+    "test-all": "yarn lint && yarn type-check && yarn test && yarn test:e2e:run",
+    "test:e2e:dev": "start-server-and-test dev http://localhost:3000 cy:open",
+    "pretest:e2e:run": "yarn run build",
+    "test:e2e:run": "start-server-and-test start http://localhost:3000 cy:run",
+    "type-check": "tsc --pretty --noEmit"
   },
   "husky": {
     "hooks": {
       "pre-commit": "lint-staged",
-      "pre-push": "yarn run type-check"
+      "pre-push": "yarn run test-all"
     }
   },
   "lint-staged": {
     "*.@(ts|tsx)": [
       "yarn lint",
       "yarn format"
+    ],
+    "package.json": [
+      "sort-package-json",
+      "git add"
     ]
   },
   "dependencies": {
@@ -39,14 +48,28 @@
     "@typescript-eslint/eslint-plugin": "^2.25.0",
     "@typescript-eslint/parser": "^2.25.0",
     "babel-jest": "^25.2.3",
+    "cypress": "^5.0.0",
     "eslint": "^6.8.0",
+    "eslint-config-airbnb": "^18.2.0",
     "eslint-config-prettier": "^6.10.1",
+    "eslint-plugin-cypress": "^2.11.1",
+    "eslint-plugin-fp": "^2.3.0",
+    "eslint-plugin-import": "^2.22.0",
+    "eslint-plugin-jest": "^23.20.0",
+    "eslint-plugin-jest-formatting": "^2.0.0",
+    "eslint-plugin-json-format": "^2.0.1",
+    "eslint-plugin-jsx-a11y": "^6.3.1",
+    "eslint-plugin-prettier": "^3.1.4",
     "eslint-plugin-react": "^7.19.0",
+    "eslint-plugin-react-hooks": "^4.1.0",
+    "eslint-plugin-testing-library": "^3.6.0",
     "husky": "^4.2.3",
     "jest": "^25.2.3",
     "jest-watch-typeahead": "^0.5.0",
     "lint-staged": "^10.0.10",
     "prettier": "^2.0.2",
+    "sort-package-json": "^1.44.0",
+    "start-server-and-test": "^1.11.3",
     "typescript": "^3.8.3"
   }
 }
