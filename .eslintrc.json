@@ -1,14 +1,50 @@
 {
   "parser": "@typescript-eslint/parser",
-  "plugins": ["@typescript-eslint"],
+  "parserOptions": {
+    "project": "./tsconfig.json"
+  },
+  "plugins": [
+    "import",
+    "@typescript-eslint",
+    "@typescript-eslint/eslint-plugin",
+    "react",
+    "react-hooks",
+    "jsx-a11y",
+    "json-format",
+    "fp",
+    "jest",
+    "jest-formatting",
+    "testing-library",
+    "cypress"
+  ],
   "extends": [
     "eslint:recommended",
     "plugin:react/recommended",
-    "plugin:@typescript-eslint/recommended"
-    // Uncomment the following lines to enable eslint-config-prettier
-    // Is not enabled right now to avoid issues with the Next.js repo
-    // "prettier",
-    // "prettier/@typescript-eslint"
+    "plugin:@typescript-eslint/recommended",
+    "eslint-config-prettier",
+    "plugin:jsx-a11y/recommended",
+    "airbnb",
+    "airbnb/hooks",
+    "plugin:fp/recommended",
+    "plugin:@typescript-eslint/eslint-recommended",
+    "plugin:@typescript-eslint/recommended-requiring-type-checking",
+    "plugin:import/errors",
+    "plugin:import/warnings",
+    "plugin:import/typescript",
+
+    // testing
+    "plugin:jest/recommended",
+    "plugin:jest/style",
+    "plugin:jest-formatting/recommended",
+    "plugin:testing-library/recommended",
+    "plugin:testing-library/react",
+    "plugin:cypress/recommended",
+
+    // must be last
+    "plugin:prettier/recommended",
+    "prettier/react",
+    "eslint-config-prettier/@typescript-eslint",
+    "prettier/@typescript-eslint"
   ],
   "env": {
     "es6": true,
@@ -17,7 +53,9 @@
     "node": true
   },
   "rules": {
+    "fp/no-mutation": [2, { "commonjs": true }],
     "react/react-in-jsx-scope": 0,
+    "react/jsx-filename-extension": 0,
     "react/display-name": 0,
     "react/prop-types": 0,
     "@typescript-eslint/explicit-function-return-type": 0,
@@ -37,6 +75,16 @@
       2,
       {
         "allow": ["warn", "error"]
+      }
+    ],
+    "import/extensions": [
+      "error",
+      "ignorePackages",
+      {
+        "js": "never",
+        "jsx": "never",
+        "ts": "never",
+        "tsx": "never"
       }
     ]
   }
