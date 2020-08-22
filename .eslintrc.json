@@ -54,6 +54,7 @@
   },
   "rules": {
     "fp/no-mutation": [2, { "commonjs": true }],
+    "react/jsx-props-no-spreading": 0,
     "react/react-in-jsx-scope": 0,
     "react/jsx-filename-extension": 0,
     "react/display-name": 0,
