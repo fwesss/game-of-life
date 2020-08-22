@@ -1,7 +1,7 @@
 import * as React from 'react'
 import { ChakraProvider, CSSReset } from '@chakra-ui/core'
-import theme from '@chakra-ui/theme'
 import { FunctionComponent } from 'react'
+import theme from '../app/theme'
 
 interface AppProps {
   Component: FunctionComponent
