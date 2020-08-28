@@ -10,12 +10,7 @@
     "react",
     "react-hooks",
     "jsx-a11y",
-    "json-format",
-    //    "fp",
-    "jest",
-    "jest-formatting",
-    "testing-library",
-    "cypress"
+    "json-format"
   ],
   "extends": [
     "eslint:recommended",
@@ -25,21 +20,11 @@
     "plugin:jsx-a11y/recommended",
     "airbnb",
     "airbnb/hooks",
-    //    "plugin:fp/recommended",
     "plugin:@typescript-eslint/eslint-recommended",
     "plugin:@typescript-eslint/recommended-requiring-type-checking",
     "plugin:import/errors",
     "plugin:import/warnings",
     "plugin:import/typescript",
-
-    // testing
-    "plugin:jest/recommended",
-    "plugin:jest/style",
-    "plugin:jest-formatting/recommended",
-    "plugin:testing-library/recommended",
-    "plugin:testing-library/react",
-    "plugin:cypress/recommended",
-
     // must be last
     "plugin:prettier/recommended",
     "prettier/react",
@@ -49,11 +34,9 @@
   "env": {
     "es6": true,
     "browser": true,
-    "jest": true,
     "node": true
   },
   "rules": {
-    //    "fp/no-mutation": [2, { "commonjs": true }],
     "react/jsx-props-no-spreading": 0,
     "react/react-in-jsx-scope": 0,
     "react/jsx-filename-extension": 0,
