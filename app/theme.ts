@@ -226,7 +226,7 @@ const customTheme: CustomTheme = {
     body: 'Assistant, sans-serif',
     heading: 'Source Sans Pro, sans-serif',
     title: 'Raleway, sans-serif',
-    mono: 'Inconsolata, monospace'
+    mono: 'monospace'
   },
   fontSizes: {
     xs: '0.75rem',
