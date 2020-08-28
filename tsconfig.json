@@ -13,9 +13,8 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "jsx": "preserve",
-    "experimentalDecorators": true,
-    "types": ["jest"]
+    "experimentalDecorators": true
   },
-  "exclude": ["node_modules", ".next", "out", "cypress"],
+  "exclude": ["node_modules", ".next", "out"],
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "**/*.js"]
 }
