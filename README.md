@@ -1,3 +1,5 @@
+# [Production](https://game-of-life-eta.vercel.app/)
+
 # NextJS Typescript Boilerplate
 
 Bootstrap a developer-friendly NextJS app configured with:
