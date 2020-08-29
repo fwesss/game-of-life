@@ -6,9 +6,14 @@ export interface GameContext {
   resolution: number
 }
 
+const nums = [...Array(72).keys()]
+const speeds = Object.fromEntries(
+  nums.map((number, index) => [number + 1, nums.length - index])
+)
+
 const initialGameContext = {
   generation: 0,
-  speed: 24,
+  speed: speeds[24],
   resolution: 8
 }
 
@@ -55,7 +60,7 @@ const gameMachine = Machine<GameContext>(
     actions: {
       resetGeneration: assign<GameContext>({ generation: 0 }),
       changeSpeed: assign<GameContext>({
-        speed: (context, event: AnyEventObject) => event.speed
+        speed: (context, event: AnyEventObject) => speeds[event.speed]
       }),
       changeResolution: assign<GameContext>({
         resolution: (context, event: AnyEventObject) => event.resolution
