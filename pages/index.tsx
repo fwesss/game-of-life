@@ -44,6 +44,10 @@ export const Home = (): JSX.Element => {
       <Head>
         <title>Conway&apos;s Game of Life</title>
         <link rel="icon" href="/favicon.ico" />
+        <meta name="description" property="og:description" content="Conway's Game of Life implemented on a fragment shader" />
+        <meta property="og:type" content="Website" />
+        <meta name="image" property="og:image" content="https://raw.githubusercontent.com/fwesss/game-of-life/master/game-of-life.png" />
+        <meta name="author" content="Westley Feller" />
       </Head>
 
       <main>
