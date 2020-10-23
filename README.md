@@ -1,11 +1,17 @@
-# [Production](https://game-of-life-eta.vercel.app/)
+# Conway's Game of Life
+Conway's Game of Life written to a shader. Surrounding application written in Typescript with the Next JS framework, XState, and three.js. 
+## [Deployed](https://game-of-life-eta.vercel.app/)
 
-## Tech Stack
+# Motivation
+Conway's Game of Life is a great exercise to learn about basic techniques for rendering graphics such as double buffering. However, the goal of this verion was to implement the Game of Life while exploring more advanced techniques. I originally chose to implement the game using finite state machines with XState but expanded the scope to include writing the game to a fragment shader.
+
+# Tech Stack
 - Typescript
 - Next.js
 - three.js
 - XState
 
+# Game of Life Info
 ## Rules
 
 For each colored pixel on the canvas, sum its eight neighbors.
@@ -14,7 +20,7 @@ For each colored pixel on the canvas, sum its eight neighbors.
 
 This implementation has an additional rule that colors a pixel with a dimmer color if it is alive and it has 4 or more neighbors or 1 or 0. This simulates a dying pixel and gives the animation a more fluid look.
 
-## About this Algorithm
+## About the Algorithm
 
 This version of Conway's Game of Life was implemented with one of the simplest algorithms. Check each surrounding cell, add up those that are alive, then use that sum to determine if a cell lives or dies. This isn't the fastest way to calculate generations so I've used alternative methods to increase performance.
 
