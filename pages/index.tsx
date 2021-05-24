@@ -44,9 +44,17 @@ export const Home = (): JSX.Element => {
       <Head>
         <title>Conway&apos;s Game of Life</title>
         <link rel="icon" href="/favicon.ico" />
-        <meta name="description" property="og:description" content="Conway's Game of Life implemented on a fragment shader" />
+        <meta
+          name="description"
+          property="og:description"
+          content="Conway's Game of Life implemented on a fragment shader"
+        />
         <meta property="og:type" content="Website" />
-        <meta name="image" property="og:image" content="https://raw.githubusercontent.com/fwesss/game-of-life/master/game-of-life.png" />
+        <meta
+          name="image"
+          property="og:image"
+          content="https://raw.githubusercontent.com/fwesss/game-of-life/master/game-of-life.png"
+        />
         <meta name="author" content="Westley Feller" />
       </Head>
 
@@ -109,7 +117,7 @@ export const Home = (): JSX.Element => {
                 />
               </HStack>
 
-              <HStack w="50%">
+              <HStack w="50%" spacing={6}>
                 <Box w="xl">
                   <Heading as="h3" size="lg">
                     Speed
@@ -134,7 +142,6 @@ export const Home = (): JSX.Element => {
                     Resolution
                   </Heading>
                   <Slider
-                    colorScheme="teal"
                     defaultValue={gameState.context.resolution}
                     min={1}
                     max={16}
@@ -143,9 +150,10 @@ export const Home = (): JSX.Element => {
                     onChange={value =>
                       send('CHANGERESOLUTION', { resolution: value })
                     }
+                    isReversed
                   >
-                    <SliderTrack>
-                      <SliderFilledTrack />
+                    <SliderTrack bg="teal.400">
+                      <SliderFilledTrack bg="gray.200" />
                     </SliderTrack>
                     <SliderThumb />
                   </Slider>
